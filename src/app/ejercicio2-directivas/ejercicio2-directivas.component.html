@@ -1,0 +1,34 @@
+<h2>Reserva de Vuelos</h2>
+Origen: 
+<select [(ngModel)]="selectedOrigen">
+  @for (origen of origenes; track origen) {
+    <option>{{origen}}</option>
+  }@empty {
+    <p>No hay opciones de origen</p>
+  }
+</select>
+<br>
+
+Destinos: 
+<select [(ngModel)]="selectedDestino">
+  @for (destino of destinos; track destino) {
+    <option>{{destino}}</option>
+  }@empty {
+    <p>No hay opciones de destino</p>
+  }
+</select>
+<br>
+
+Fecha de Ida:
+<input type="date" [(ngModel)]="fechaIda">
+<br>
+
+Fecha de Vuelta:
+<input type="date" [(ngModel)]="fechaVuelta">
+<br>
+
+Número de pasajeros:
+<input type="number" [(ngModel)]="numeroPasajeros">
+<br>
+
+<button (click)="mostrarInfo()">Mostrar información</button>

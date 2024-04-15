@@ -1,0 +1,41 @@
+<h2>Ejercicio1 - Arma tu PC</h2>
+Tamaño de la RAM : 
+@for (ram of Ram; track ram) {
+    <label>
+        <input type="radio" name="selectedRam" [(ngModel)]="selectedRam" [value]="ram">{{ram}}
+      </label>
+}@empty {
+    <p>No hay opciones RAM</p>
+}
+<br>
+Tipo de procesador :
+<select [(ngModel)]="selectedProcessor">
+@for (procesador of Procesador; track procesador) {
+    <option >{{procesador}}</option>
+}@empty {
+    <p>No hay opciones de procesador</p>
+}
+</select>
+<br>
+Tarjeta Gráfica : 
+<input type="checkbox" [(ngModel)]="includeGraphicsCard">
+<br>
+Discos Duros : 
+@for (disco of DiscosDuros; track disco) {
+    <label>
+        <input type="radio" name="selectedHardDrive" [(ngModel)]="selectedHardDrive" [value]="disco">{{disco}}
+    </label>
+}@empty {
+    <p>No hay opciones disco duro</p>
+}
+<br>
+Fuentes de Alimentacion : 
+<select [(ngModel)]="selectedPowerSupply">
+    @for (alimentacion of Alimentacion; track alimentacion) {
+        <option>{{alimentacion}}</option>
+    }@empty {
+        <p>No hay opciones de fuente de alimentacion</p>
+    }
+</select>
+<br>
+<button type="submit" (click)="mostrarInfo()">Mostrar Informacion</button>

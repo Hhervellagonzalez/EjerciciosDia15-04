@@ -1,0 +1,31 @@
+<h2>Usando Directivas</h2>
+Género: 
+@for (gen of genero; track gen) {
+    <label>
+        <input type="radio" name="genero" [(ngModel)]="generoSeleccionado" [value]="gen">{{gen}}
+    </label>
+}@empty {
+    <p>No hay opciones de genero</p>
+}
+<br>
+
+  Nacionalidades: 
+  <select [(ngModel)]="nacionalidadSeleccionada">
+    @for (nacionalidad of nacionalidades; track nacionalidad) {
+      <option>{{nacionalidad}}</option>
+    }@empty {
+      <p>No hay nacionalidades disponibles</p>
+    }
+  </select>
+  <br>
+
+  Lenguajes de Programación:
+  @for (lenguaje of lenguajesProgramacion; track lenguaje) {
+    <label>
+        <input type="checkbox" >{{lenguaje}}
+    </label>
+    }@empty {
+    <p>No hay lenguajes de programación disponibles</p>
+    }
+    <br>
+  <button (click)="mostrarInfo()">Mostrar información</button>
